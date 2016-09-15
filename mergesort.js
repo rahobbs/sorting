@@ -1,4 +1,5 @@
 function split(wholeArray) {
+  //TODO if array.length == 1, return [array, []];
   var numToSplit = Math.floor(wholeArray.length / 2);
   var firstHalf = wholeArray.slice(0, numToSplit);
   var secondHalf = wholeArray.slice(numToSplit);
@@ -28,9 +29,10 @@ function merge(arr1, arr2){
 }
 
 function mergeSort(array){
-
-  // split the the array down to arrays of lenth 1
-  // call merge until everything is merged
-
-  return resultArray;
+  if (array.length <= 1){
+    return array;
+  }
+  var [first, second] = split(array);
+  var result =  merge(mergeSort(first), mergeSort(second));
+  return result;
 }

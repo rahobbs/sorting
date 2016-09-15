@@ -16,3 +16,11 @@ describe('Merge Sort', function(){
     expect(merge(firstArray, secondArray)).toEqual(result);
   });
 });
+
+describe('mergeSort', function(){
+  it('is able to sort an unsorted array', function(){
+    var array = [5, 2, 6, 2, 7];
+    var sorted = [2, 2, 5, 6, 7];
+    expect(mergeSort(array)).toEqual(sorted);
+  });
+});
